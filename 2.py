@@ -26,22 +26,26 @@ def unic():
     return unic
 
 unic_dict = unic()
-print(unic_dict)
-values = []
-for key, value in unic_dict.items():
-        values.append(value)
-values.sort()
-values.reverse()
-values = values[10:]
-values_finish = [el for el, _ in groupby(values)]
-unic_dict_copy = unic_dict.copy()
-for i in range(len(values_finish)):
-    get = values_finish[i]
-    # print(get)
-    for key, val in unic_dict.items():
-        if val == get:
-            del unic_dict_copy[key]
+# print(unic_dict)
+# values = []
+# for key, value in unic_dict.items():
+#         values.append(value)
+# values.sort()
+# values.reverse()
+# values = values[10:]
+# values_finish = [el for el, _ in groupby(values)]
+# unic_dict_copy = unic_dict.copy()
+# for i in range(len(values_finish)):
+#     get = values_finish[i]
+#     # print(get)
+#     for key, val in unic_dict.items():
+#         if val == get:
+#             del unic_dict_copy[key]
 
-print(unic_dict_copy)
-
+# print(unic_dict_copy)
 unic()
+print(unic_dict)
+sort_dict = sorted(unic_dict.items(), key = lambda x: x[1], reverse=True)
+print(sort_dict)
+finish_dict = sort_dict[0:10]
+print(finish_dict)
